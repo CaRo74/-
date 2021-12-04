@@ -1,0 +1,209 @@
+@mixin mobile {
+  @media screen and (max-width: 767px){
+    @content;
+  }
+}
+
+html{
+  font-size: 62.5%;
+}
+body{
+  font-size: 1.6rem;
+  color: #333333;
+}
+img{
+  width: 100%;
+  vertical-align: bottom;
+}
+li{
+  list-style: none;
+}
+a{
+  color: #333333;
+  text-decoration: none;
+}
+.section-title{
+  letter-spacing: 0.03em;
+  text-align: center;
+  & .section-title-en{
+    font-size: 3.2rem;
+    color: #007BFF;
+    margin-bottom: 8px;
+    @include mobile{
+      font-size: 2.6rem;
+      margin-bottom: 5px;
+    }
+  }
+  & .section-title-jp{
+    font-size: 1.3rem;
+    @include mobile {
+      font-size: 1.2rem;
+    }
+  }
+}
+.mobile-wrapper{
+  @include mobile{
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+}
+.header{
+  height: 90px;
+  padding: 30px 0;
+  @include mobile{
+    height: 56px;
+    padding: 16px 0;
+  }
+  img{
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    @include mobile {
+      width: 90px;
+    }
+  }
+}
+.mainvisual{
+  background-image: url(../img/pc_mv.jpg);
+  background-size: cover;
+  height: 560px;
+  @include mobile{
+    background-image: url(../img/sp_mv.jpg);
+    background-size: cover;
+    height: 280px;
+  }
+}
+.news{
+  margin: 80px auto 100px;
+  max-width: 760px;
+  @include mobile{
+    margin: 50px auto 60px;
+  }
+  & .newslist {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    @include mobile{
+      font-size: 1.4rem;
+      line-height: 1.7;
+    }
+    & li{
+      display: flex;
+      padding: 20px 0;
+      border-bottom: 1px solid #EDEDED;
+      @include mobile{
+        flex-direction: column;
+        padding: 15px 0;
+      }
+      & time{
+        margin-right: 45px;
+        @include mobile{
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+.concept {
+  display: flex;
+  align-items: center;
+  @include mobile{
+    flex-direction: column;
+  }
+  & .concept-img {
+    width: 50%;
+    @include mobile{
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  & .section-title {
+    text-align: left;
+    padding-left: 70px;
+    @include mobile{
+      padding-left: 0px;
+      margin-bottom: 15px;
+    }
+    & .section-title-en {
+      margin-bottom: 30px;
+      line-height: 1.5;
+      @include mobile{
+        margin-bottom: 15px;
+        font-size: 2.4rem;
+      }
+    }
+    & .section-title-jp {
+      line-height: 1.8;
+      @include mobile{
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+.service {
+  margin: 93px auto 80px;
+  text-align: center;
+  max-width: 1110px;
+  @include mobile{
+    margin: 60px auto 50px;
+  }
+  & .service-items {
+    margin: 30px auto 40px;
+    display: flex;
+    justify-content: space-between;
+    @include mobile{
+      margin: 20px auto 30px;
+      flex-direction: column;
+    }
+    & li {
+      width: 350px;
+      @include mobile{
+        width: 100%; 
+        margin-bottom: 20px;
+      }
+      & img {
+        margin-bottom: 15px;
+        @include mobile{
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  & .service-button {
+    & a{
+      display: inline-block;
+      width: 200px;
+      height: 55px;
+      margin: 0 auto;
+      background-color: #007BFF;
+      color: #fff;
+      font-size: 1.5rem;
+      line-height: 55px;
+      border-radius: 100px;
+      @include mobile{
+        width: 180px;
+        height: 50px;
+        margin: 0 auto;
+        font-size: 1.4rem;
+        line-height: 50px;
+      }
+    }
+  }
+}
+.footer {
+  background-color: #1F1F1F;
+  height: 92px;
+  @include mobile{
+    height: 62px;
+  }
+  & p{
+    color: #7B7B7B;
+    text-align: center;
+    line-height: 92px;
+    font-size: 1.2rem;
+    @include mobile {
+      line-height: 62px;
+      font-size: 1.1rem;
+    }
+  }
+}
